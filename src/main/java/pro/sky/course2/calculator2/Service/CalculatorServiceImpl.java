@@ -1,5 +1,7 @@
 package pro.sky.course2.calculator2.Service;
 
+import pro.sky.course2.calculator2.exception.ZeroDivideException;
+
 @org.springframework.stereotype.Service
 public class CalculatorServiceImpl implements CalculatorService {
 
@@ -20,6 +22,9 @@ public class CalculatorServiceImpl implements CalculatorService {
 
     @Override
     public float getDivide(float a, float b) {
+        if (b == 0) {
+            throw new ZeroDivideException();
+        }
         return a / b;
     }
 }
