@@ -55,8 +55,6 @@ public class CalculatorСontroller {
                              @RequestParam (required = false) Float num2) {
         if (Objects.isNull(num1) || Objects.isNull(num2)) {
             return "Неверно переданы параметры";
-        } else if (num2 == 0) {
-            return "Делить на ноль нельзя";
         }
         return num1 + " / " + num2 + " = " + service.getDivide(num1, num2);
     }
